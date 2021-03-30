@@ -20,5 +20,8 @@ The information is detailed enough, just to use the script according to the poin
 
 But something need to notice:
 
-- The IP of Subsystem will change after Windows reopen
-- The script wouldn't save any information, so you need reset after Windows reopen
+- Just test with Ubuntu 20.04
+- When use Port Proxy, IP that listen in Subsystem must be `0.0.0.0`
+- When use Net Proxy, enable the proxy software to allow LAN connections
+- The IP of Subsystem will change after Windows reboot
+- The script wouldn't save any information, so you need reset after Windows reboot
