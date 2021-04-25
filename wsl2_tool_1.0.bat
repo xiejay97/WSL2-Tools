@@ -118,7 +118,7 @@ echo                  ^|      [5] Exit                                          
 echo                  ^|                                                               ^|
 echo                  ^|_______________________________________________________________^|
 echo:          
-choice /C:12345 /N /M ">                   Enter Your Choice in the Keyboard [1,2,3,4,5] : "
+choice /C:12345 /N /M ">                   Enter Your Choice in the Keyboard in the Keyboard [1,2,3,4,5] : "
 
 if errorlevel  5 goto:Exit
 if errorlevel  4 goto:IPSetting 
@@ -157,7 +157,7 @@ echo                     ^|     [4] Go to Main Menu                             
 echo                     ^|                                                         ^|
 echo                     ^|_________________________________________________________^|
 echo:                                                                               
-choice /C:1234 /N /M ">                     Enter Your Choice [1,2,3,4] : "
+choice /C:1234 /N /M ">                     Enter Your Choice in the Keyboard [1,2,3,4] : "
 
 if errorlevel 4 goto:MainMenu
 if errorlevel 3 goto:ShowPortProxy
@@ -227,7 +227,7 @@ echo                     ^|     [4] Go to Main Menu                             
 echo                     ^|                                                         ^|
 echo                     ^|_________________________________________________________^|
 echo:                                                                               
-choice /C:1234 /N /M ">                     Enter Your Choice [1,2,3,4] : "
+choice /C:1234 /N /M ">                     Enter Your Choice in the Keyboard [1,2,3,4] : "
 
 if errorlevel 4 goto:MainMenu
 if errorlevel 3 goto:SetAlwaysProxy
@@ -309,7 +309,7 @@ echo                     ^|     [6] Go to Main Menu                             
 echo                     ^|                                                         ^|
 echo                     ^|_________________________________________________________^|
 echo:                                                                               
-choice /C:123456 /N /M ">                     Enter Your Choice [1,2,3,4,5,6] : "
+choice /C:123456 /N /M ">                     Enter Your Choice in the Keyboard [1,2,3,4,5,6] : "
 
 if errorlevel 6 goto:MainMenu
 if errorlevel 5 goto:ShowIP
