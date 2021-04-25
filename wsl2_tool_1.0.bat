@@ -188,7 +188,7 @@ goto PortProxy
 :ResetPortProxy
 netsh interface portproxy reset 
 echo:
-echo                       Success!
+echo                       Success
 echo:
 echo                       Press any key to continue...
 pause >nul
@@ -244,12 +244,12 @@ set input=
 set /p input=">                     Enter Socks Port:"
 set socks_port=%input%
 bash.exe -c "sed -i '/export hostip/d;/alias set_proxy/d;/alias clear_proxy/d' ~/.bashrc"
-bash.exe -c "sed -i $'$a export hostip=ip route | grep default | awk \'{print $3}\'' ~/.bashrc"
+bash.exe -c "sed -i $'$a export hostip=\$\(cat /etc/resolv.conf |grep \"nameserver\" |cut -f 2 -d \" \"\)' ~/.bashrc"
 bash.exe -c "sed -i $'$a alias set_proxy=\'export https_proxy=\"http://${hostip}:%http_port%\";export http_proxy=\"http://${hostip}:%http_port%\";export all_proxy=\"socks5://${hostip}:%socks_port%\";\'' ~/.bashrc"
 bash.exe -c "sed -i $'$a alias clear_proxy=\'unset https_proxy;unset http_proxy;unset all_proxy;\'' ~/.bashrc"
 bash.exe -c "source ~/.bashrc"
 echo:
-echo                       Success!
+echo                       Success
 echo                       Opne  proxy with command: set_proxy
 echo                       Close proxy with command: clear_proxy
 echo:
@@ -261,7 +261,7 @@ goto NetProxy
 bash.exe -c "sed -i '/export hostip/d;/set_proxy/d;/clear_proxy/d' ~/.bashrc"
 bash.exe -c "source ~/.bashrc"
 echo:
-echo                       Success!
+echo                       Success
 echo:
 echo                       Press any key to continue...
 pause >nul
@@ -274,7 +274,7 @@ if errorlevel 2 bash.exe -c "sed -i '/^set_proxy$/d' ~/.bashrc"
 if errorlevel 1 bash.exe -c "sed -i $'$a set_proxy' ~/.bashrc"
 bash.exe -c "source ~/.bashrc"
 echo:
-echo                       Success!
+echo                       Success
 echo:
 echo                       Press any key to continue...
 pause >nul
@@ -329,7 +329,7 @@ for /f "tokens=1,2,3 delims=." %%a in ("%input%") do (
 )
 wsl -u root ip addr add %input%/24 broadcast %num1%.%num2%.%num3%.255 dev eth0 label eth0:1
 echo:
-echo                       Success!
+echo                       Success
 echo:
 echo                       Press any key to continue...
 pause >nul
@@ -341,7 +341,7 @@ set input=
 set /p input=">                     Enter IP:"
 netsh interface ip add address "vEthernet (WSL)" %input% 255.255.255.0
 echo:
-echo                       Success!
+echo                       Success
 echo:
 echo                       Press any key to continue...
 pause >nul
@@ -358,7 +358,7 @@ for /f "tokens=1,2,3 delims=." %%a in ("%input%") do (
 )
 wsl -u root ip addr del %input%/24 broadcast %num1%.%num2%.%num3%.255 dev eth0 label eth0:1
 echo:
-echo                       Success!
+echo                       Success
 echo:
 echo                       Press any key to continue...
 pause >nul
@@ -370,7 +370,7 @@ set input=
 set /p input=">                     Enter IP:"
 netsh interface ip delete address "vEthernet (WSL)" addr=%input% gateway=all
 echo:
-echo                       Success!
+echo                       Success
 echo:
 echo                       Press any key to continue...
 pause >nul
