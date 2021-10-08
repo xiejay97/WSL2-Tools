@@ -6,8 +6,7 @@
 ::========================================================================================================================================
 
 cls
-chcp 65001>nul 2>nul
-title WSL2 å·¥å…· 1.0
+title WSL2 ¹¤¾ß 1.0
 set _elev=
 if /i "%~1"=="-el" set _elev=1
 for /f "tokens=6 delims=[]. " %%G in ('ver') do set winbuild=%%G
@@ -21,8 +20,8 @@ set "ErrLine=echo: & %EchoRed% ==== ERROR ==== &echo:"
 
 for %%i in (powershell.exe) do if "%%~$path:i"=="" (
 echo: &echo ==== ERROR ==== &echo:
-echo ç³»ç»Ÿä¸­æ²¡æœ‰å®‰è£…Powershell.
-echo æ­£åœ¨ä¸­æ­¢...
+echo ÏµÍ³ÖÐÃ»ÓÐ°²×°Powershell.
+echo ÕýÔÚÖÐÖ¹...
 goto ErrExit
 )
 
@@ -30,8 +29,8 @@ goto ErrExit
 
 if %winbuild% LSS 18362 (
 %ErrLine%
-echo æ£€æµ‹åˆ°ä¸æ”¯æŒçš„æ“ä½œç³»ç»Ÿç‰ˆæœ¬.
-echo é¡¹ç›®ä»…æ”¯æŒ Windows 10: ç‰ˆæœ¬ 1903 æˆ–æ›´é«˜ç‰ˆæœ¬, é‡‡ç”¨å†…éƒ¨ç‰ˆæœ¬ 18362 æˆ–æ›´é«˜ç‰ˆæœ¬.
+echo ¼ì²âµ½²»Ö§³ÖµÄ²Ù×÷ÏµÍ³°æ±¾.
+echo ÏîÄ¿½öÖ§³Ö Windows 10: °æ±¾ 1903 »ò¸ü¸ß°æ±¾, ²ÉÓÃÄÚ²¿°æ±¾ 18362 »ò¸ü¸ß°æ±¾.
 goto ErrExit
 )
 
@@ -83,8 +82,8 @@ exit /b
 
 :_E_Admin
 %ErrLine%
-echo æ­¤è„šæœ¬éœ€è¦ç®¡ç†å‘˜æƒé™.
-echo ä¸ºæ­¤, å³é”®å•å‡»æ­¤è„šæœ¬å¹¶é€‰æ‹©'ä»¥ç®¡ç†å‘˜èº«ä»½è¿è¡Œ'.
+echo ´Ë½Å±¾ÐèÒª¹ÜÀíÔ±È¨ÏÞ.
+echo Îª´Ë, ÓÒ¼üµ¥»÷´Ë½Å±¾²¢Ñ¡Ôñ'ÒÔ¹ÜÀíÔ±Éí·ÝÔËÐÐ'.
 goto ErrExit
 
 :_Passed
@@ -96,7 +95,7 @@ setlocal EnableDelayedExpansion
 :MainMenu
 
 cls
-title WSL2 å·¥å…· 1.0
+title WSL2 ¹¤¾ß 1.0
 mode con cols=98 lines=30
 
 echo:
@@ -104,21 +103,21 @@ echo:
 echo                   _______________________________________________________________
 echo                  ^|                                                               ^| 
 echo                  ^|                                                               ^|
-echo                  ^|      [1] è‡ªè¿°æ–‡ä»¶                                             ^|
+echo                  ^|      [1] ×ÔÊöÎÄ¼þ                                             ^|
 echo                  ^|      ___________________________________________________      ^|
 echo                  ^|                                                               ^|
-echo                  ^|      [2] ç«¯å£è½¬å‘                                             ^|
+echo                  ^|      [2] ¶Ë¿Ú×ª·¢                                             ^|
 echo                  ^|                                                               ^|
-echo                  ^|      [3] ç½‘ç»œä»£ç†                                             ^|
+echo                  ^|      [3] ÍøÂç´úÀí                                             ^|
 echo                  ^|                                                               ^|
-echo                  ^|      [4] IP è®¾ç½®                                              ^|
+echo                  ^|      [4] IP ÉèÖÃ                                              ^|
 echo                  ^|      ___________________________________________________      ^|
 echo                  ^|                                                               ^|
-echo                  ^|      [5] é€€å‡º                                                 ^|
+echo                  ^|      [5] ÍË³ö                                                 ^|
 echo                  ^|                                                               ^|
 echo                  ^|_______________________________________________________________^|
 echo:          
-choice /C:12345 /N /M ">                   åœ¨é”®ç›˜ä¸Šè¾“å…¥ä½ çš„é€‰æ‹© [1,2,3,4,5] : "
+choice /C:12345 /N /M ">                   ÔÚ¼üÅÌÉÏÊäÈëÄãµÄÑ¡Ôñ [1,2,3,4,5] : "
 
 if errorlevel  5 goto:Exit
 if errorlevel  4 goto:IPSetting 
@@ -137,7 +136,7 @@ start https://github.com/Xie-Jay/WSL2-Tools/blob/main/README-zh_CN.md  &goto Mai
 :PortProxy
 
 cls
-title ç«¯å£è½¬å‘
+title ¶Ë¿Ú×ª·¢
 mode con cols=98 lines=30
 
 echo:
@@ -145,19 +144,19 @@ echo:
 echo                      _________________________________________________________   
 echo                     ^|                                                         ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [1] æ·»åŠ ä»£ç†ç«¯å£                                    ^|
+echo                     ^|     [1] Ìí¼Ó´úÀí¶Ë¿Ú                                    ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [2] é‡ç½®ä»£ç†ç«¯å£                                    ^|
+echo                     ^|     [2] ÖØÖÃ´úÀí¶Ë¿Ú                                    ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [3] å±•ç¤ºä»£ç†ç«¯å£                                    ^|
+echo                     ^|     [3] Õ¹Ê¾´úÀí¶Ë¿Ú                                    ^|
 echo                     ^|                                                         ^|
 echo                     ^|     _______________________________________________     ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [4] è¿”å›žä¸»èœå•                                      ^|
+echo                     ^|     [4] ·µ»ØÖ÷²Ëµ¥                                      ^|
 echo                     ^|                                                         ^|
 echo                     ^|_________________________________________________________^|
 echo:                                                                               
-choice /C:1234 /N /M ">                     åœ¨é”®ç›˜ä¸Šè¾“å…¥ä½ çš„é€‰æ‹© [1,2,3,4] : "
+choice /C:1234 /N /M ">                     ÔÚ¼üÅÌÉÏÊäÈëÄãµÄÑ¡Ôñ [1,2,3,4] : "
 
 if errorlevel 4 goto:MainMenu
 if errorlevel 3 goto:ShowPortProxy
@@ -170,7 +169,7 @@ for /f %%j in ('bash.exe -c "hostname -I | awk '{print $1}'"') do (
 )
 echo:
 set input=
-set /p input=">                     è¾“å…¥ç«¯å£(ç”¨ç©ºæ ¼éš”å¼€):"
+set /p input=">                     ÊäÈë¶Ë¿Ú(ÓÃ¿Õ¸ñ¸ô¿ª):"
 set s=%input%
 :loop
 for /f "tokens=1*" %%a in ("%s%") do (
@@ -181,16 +180,16 @@ if defined s goto :loop
 echo:
 netsh interface portproxy show v4tov4
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto PortProxy
 
 :ResetPortProxy
 netsh interface portproxy reset 
 echo:
-echo                       æˆåŠŸ
+echo                       ³É¹¦
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto PortProxy
 
@@ -198,7 +197,7 @@ goto PortProxy
 echo:
 netsh interface portproxy show v4tov4
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto PortProxy
 
@@ -207,7 +206,7 @@ goto PortProxy
 :NetProxy
 
 cls
-title ç½‘ç»œä»£ç†
+title ÍøÂç´úÀí
 mode con cols=98 lines=30
 
 echo:
@@ -215,19 +214,19 @@ echo:
 echo                      _________________________________________________________   
 echo                     ^|                                                         ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [1] è®¾ç½®ä»£ç†å‘½ä»¤                                    ^|
+echo                     ^|     [1] ÉèÖÃ´úÀíÃüÁî                                    ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [2] æ¸…é™¤ä»£ç†å‘½ä»¤                                    ^|
+echo                     ^|     [2] Çå³ý´úÀíÃüÁî                                    ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [3] è®¾ç½®æ€»æ˜¯å¼€å¯ä»£ç†                                ^|
+echo                     ^|     [3] ÉèÖÃ×ÜÊÇ¿ªÆô´úÀí                                ^|
 echo                     ^|                                                         ^|
 echo                     ^|     _______________________________________________     ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [4] è¿”å›žä¸»èœå•                                      ^|
+echo                     ^|     [4] ·µ»ØÖ÷²Ëµ¥                                      ^|
 echo                     ^|                                                         ^|
 echo                     ^|_________________________________________________________^|
 echo:                                                                               
-choice /C:1234 /N /M ">                     åœ¨é”®ç›˜ä¸Šè¾“å…¥ä½ çš„é€‰æ‹© [1,2,3,4] : "
+choice /C:1234 /N /M ">                     ÔÚ¼üÅÌÉÏÊäÈëÄãµÄÑ¡Ôñ [1,2,3,4] : "
 
 if errorlevel 4 goto:MainMenu
 if errorlevel 3 goto:SetAlwaysProxy
@@ -237,11 +236,11 @@ if errorlevel 1 goto:SetProxyCommand
 :SetProxyCommand
 echo:
 set input=
-set /p input=">                     è¾“å…¥ Http(s) ç«¯å£:"
+set /p input=">                     ÊäÈë Http(s) ¶Ë¿Ú:"
 set http_port=%input%
 echo:
 set input=
-set /p input=">                     è¾“å…¥ Socks ç«¯å£:"
+set /p input=">                     ÊäÈë Socks ¶Ë¿Ú:"
 set socks_port=%input%
 bash.exe -c "sed -i '/export hostip/d;/alias set_proxy/d;/alias clear_proxy/d' ~/.bashrc"
 bash.exe -c "sed -i $'$a export hostip=\$\(cat /etc/resolv.conf |grep \"nameserver\" |cut -f 2 -d \" \"\)' ~/.bashrc"
@@ -249,11 +248,11 @@ bash.exe -c "sed -i $'$a alias set_proxy=\'export https_proxy=\"http://${hostip}
 bash.exe -c "sed -i $'$a alias clear_proxy=\'unset https_proxy;unset http_proxy;unset all_proxy;\'' ~/.bashrc"
 bash.exe -c "source ~/.bashrc"
 echo:
-echo                       æˆåŠŸ
-echo                       æ‰“å¼€ä»£ç†å‘½ä»¤: set_proxy
-echo                       å…³é—­ä»£ç†å‘½ä»¤: clear_proxy
+echo                       ³É¹¦
+echo                       ´ò¿ª´úÀíÃüÁî: set_proxy
+echo                       ¹Ø±Õ´úÀíÃüÁî: clear_proxy
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto NetProxy
 
@@ -261,22 +260,22 @@ goto NetProxy
 bash.exe -c "sed -i '/export hostip/d;/set_proxy/d;/clear_proxy/d' ~/.bashrc"
 bash.exe -c "source ~/.bashrc"
 echo:
-echo                       æˆåŠŸ
+echo                       ³É¹¦
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto NetProxy
 
 :SetAlwaysProxy
 echo:
-choice /C:YN /N /M ">                     æ€»æ˜¯å¼€å¯ä»£ç† [Y,N] : "
+choice /C:YN /N /M ">                     ×ÜÊÇ¿ªÆô´úÀí [Y,N] : "
 if errorlevel 2 bash.exe -c "sed -i '/^set_proxy$/d' ~/.bashrc"
 if errorlevel 1 bash.exe -c "sed -i $'$a set_proxy' ~/.bashrc"
 bash.exe -c "source ~/.bashrc"
 echo:
-echo                       æˆåŠŸ
+echo                       ³É¹¦
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto NetProxy
 
@@ -285,7 +284,7 @@ goto NetProxy
 :IPSetting
 
 cls
-title IP è®¾ç½®
+title IP ÉèÖÃ
 mode con cols=98 lines=30
 
 echo:
@@ -293,23 +292,23 @@ echo:
 echo                      _________________________________________________________   
 echo                     ^|                                                         ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [1] æ·»åŠ  Linux IP                                   ^|
+echo                     ^|     [1] Ìí¼Ó Linux IP                                   ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [2] æ·»åŠ  Windows IP                                 ^|
+echo                     ^|     [2] Ìí¼Ó Windows IP                                 ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [3] åˆ é™¤ Linux IP                                   ^|
+echo                     ^|     [3] É¾³ý Linux IP                                   ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [4] åˆ é™¤ Windows IP                                 ^|
+echo                     ^|     [4] É¾³ý Windows IP                                 ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [5] å±•ç¤º IP                                         ^|
+echo                     ^|     [5] Õ¹Ê¾ IP                                         ^|
 echo                     ^|                                                         ^|
 echo                     ^|     _______________________________________________     ^|
 echo                     ^|                                                         ^|
-echo                     ^|     [6] è¿”å›žä¸»èœå•                                      ^|
+echo                     ^|     [6] ·µ»ØÖ÷²Ëµ¥                                      ^|
 echo                     ^|                                                         ^|
 echo                     ^|_________________________________________________________^|
 echo:                                                                               
-choice /C:123456 /N /M ">                     åœ¨é”®ç›˜ä¸Šè¾“å…¥ä½ çš„é€‰æ‹© [1,2,3,4,5,6] : "
+choice /C:123456 /N /M ">                     ÔÚ¼üÅÌÉÏÊäÈëÄãµÄÑ¡Ôñ [1,2,3,4,5,6] : "
 
 if errorlevel 6 goto:MainMenu
 if errorlevel 5 goto:ShowIP
@@ -321,7 +320,7 @@ if errorlevel 1 goto:AddLinuxIP
 :AddLinuxIP
 echo:
 set input=
-set /p input=">                     è¾“å…¥ IP:"
+set /p input=">                     ÊäÈë IP:"
 for /f "tokens=1,2,3 delims=." %%a in ("%input%") do (
     set num1=%%a
 	set num2=%%b
@@ -329,28 +328,28 @@ for /f "tokens=1,2,3 delims=." %%a in ("%input%") do (
 )
 wsl -u root ip addr add %input%/24 broadcast %num1%.%num2%.%num3%.255 dev eth0 label eth0:1
 echo:
-echo                       æˆåŠŸ
+echo                       ³É¹¦
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto IPSetting
 
 :AddWindowsIP
 echo:
 set input=
-set /p input=">                     è¾“å…¥ IP:"
+set /p input=">                     ÊäÈë IP:"
 netsh interface ip add address "vEthernet (WSL)" %input% 255.255.255.0
 echo:
-echo                       æˆåŠŸ
+echo                       ³É¹¦
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto IPSetting
 
 :DelLinuxIP
 echo:
 set input=
-set /p input=">                     è¾“å…¥ IP:"
+set /p input=">                     ÊäÈë IP:"
 for /f "tokens=1,2,3 delims=." %%a in ("%input%") do (
     set num1=%%a
 	set num2=%%b
@@ -358,21 +357,21 @@ for /f "tokens=1,2,3 delims=." %%a in ("%input%") do (
 )
 wsl -u root ip addr del %input%/24 broadcast %num1%.%num2%.%num3%.255 dev eth0 label eth0:1
 echo:
-echo                       æˆåŠŸ
+echo                       ³É¹¦
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto IPSetting
 
 :DelWindowsIP
 echo:
 set input=
-set /p input=">                     è¾“å…¥ IP:"
+set /p input=">                     ÊäÈë IP:"
 netsh interface ip delete address "vEthernet (WSL)" addr=%input% gateway=all
 echo:
-echo                       æˆåŠŸ
+echo                       ³É¹¦
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto IPSetting
 
@@ -386,7 +385,7 @@ for /f "tokens=2 delims=:" %%b in ('netsh interface ip show config "vEthernet (W
     for /f "tokens=*" %%i in ("%%b") do echo %%i
 )
 echo:
-echo                       è¾“å…¥ä»»æ„é”®ç»§ç»­...
+echo                       ÊäÈëÈÎÒâ¼ü¼ÌÐø...
 pause >nul
 goto IPSetting
 
@@ -401,7 +400,7 @@ exit /b
 :ErrExit
 
 echo:
-echo è¾“å…¥ä»»æ„é”®é€€å‡º...
+echo ÊäÈëÈÎÒâ¼üÍË³ö...
 pause >nul
 exit /b
 
